@@ -1,8 +1,0 @@
-* SSH
-sudo pacman -S openssh
-
-* display scaling
-xrandr --current
-	shows the displays and what resolutions they support
-xrandr --output HDMI-2 --mode 1920x1080
-	assigns/changes the displays
