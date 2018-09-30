@@ -248,3 +248,29 @@ Use up and down arrows to increase or decrease the volume
 
 *BONUS* alsamixer has a nice UI which is colorful to rice screenshot :)
 
+___
+
+### Qutebrowser
+To set up text search engines, do this in config.py file
+c.url.searchengines = {
+"DEFAULT":
+"yt":
+
+}
+
+___
+
+### Compton
+Gives the nice shadow effect!
+
+___
+
+###betterlockscreen
+Install betterlockscreen from yay and then do this on command. 
+betterlockscreen -u ~/Downloads/edin-durmisevic-dark-forest.jpg -r 1920x1080 -b 0.5 -l dim
+then store this in i3 config!
+exec --no-startup-id betterlockscreen -w dim
+
+___
+
+ 

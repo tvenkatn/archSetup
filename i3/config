@@ -169,8 +169,20 @@ bar {
         status_command i3blocks
 }
 
-gaps inner 5
-gaps outer 5
+gaps inner 10
+gaps outer 0
 smart_gaps on
+
+# alt tab
+bindsym $mod+Tab exec "rofi -show combi run,window"
+
+# compton
+exec --no-startup-id compton --config ~/.config/compton.conf -b
+
+# feh background screen
+exec --no-startup-id feh --bg-scale '/home/srinivas/Downloads/edin-durmisevic-dark-forest.jpg'
+
+# betterlockscreen
+bindsym $mod+shift+x exec betterlockscreen -l dim -t "Hello Srinivas!"
 
 
