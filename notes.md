@@ -273,4 +273,49 @@ exec --no-startup-id betterlockscreen -w dim
 
 ___
 
- 
+ROFI power button options
+create a bash file with contents like this
+#!/bin/sh
+
+DIALOG_RESULT=$(echo -e 'exit i3\nsuspend\nreboot\nshutdown' | rofi -dmenu -i -p "power options" -hide-scrollbar -tokenize -lines 5 -eh 1 -width 50 -padding 50 -disable-history -font "Droid Sans 16")
+
+echo "This result is : $DIALOG_RESULT"
+sleep 1;
+
+if [ "$DIALOG_RESULT" = "exit i3" ];
+then
+    i3-msg 'exit'
+elif [ "$DIALOG_RESULT" = "suspend" ];
+then
+    exec systemctl suspend
+elif [ "$DIALOG_RESULT" = "reboot" ];
+then
+    exec reboot
+elif [ "$DIALOG_RESULT" = "shutdown" ];
+then
+    exec shutdown -h now
+fi
+
+
+and then call this from i3 using a bindsym
+my i3 has
+bindsym $mod+Delete exec sh ~/.config/rofi_computer
+
+__
+FEH
+set background image
+feh --bg-scale ~/path/myimage.jpg
+
+__
+
+## CONNECTING to WIFI
+If wifi is not working as a user in arch after a new arch install, 
+**killall dhcpcd**
+and then if it's a new wifi network, type in 
+**wifi-menu** and follow.
+
+__
+
+### Package management
+
+pacman is the default package manager of Arch. User packages are in a repository called AUR. It has several helpers like yay (the one I use) or yaourt etc. 
