@@ -319,3 +319,10 @@ __
 ### Package management
 
 pacman is the default package manager of Arch. User packages are in a repository called AUR. It has several helpers like yay (the one I use) or yaourt etc. 
+
+
+
+### Polybar icons
+https://github.com/jaagr/polybar/issues/924
+installing and using the right fonts is important.
+Any font from a fontawesome cheat sheet could be used!
